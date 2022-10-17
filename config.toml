@@ -18,6 +18,8 @@ highlight_code = true
 
 [extra]
 
+accent_color = "orange"
+
 logo_text = "遠天之下"
 
 # menu is enabled by adding menu_items (optional)
