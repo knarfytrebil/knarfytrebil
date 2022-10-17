@@ -37,32 +37,34 @@ I tried to use some existing libraries:
 
 But finally, I tried to do it on my own:
 
-\# coding: UTF-8
+```python
+#encoding: utf-8
 import os
 
 import sae
 import web
 
-web.config.debug \= True
+web.config.debug = True
 
 from wxAPI import WeixinInterface
 
-urls \= (
+urls = (
     '/', 'Hello',
     '/weixin','WeixinInterface'
 )
 
-app\_root \= os.path.dirname(\_\_file\_\_)
-templates\_root \= os.path.join(app\_root, 'templates')
-render \= web.template.render(templates\_root)
+app_root = os.path.dirname(__file__)
+templates_root = os.path.join(app_root, 'templates')
+render = web.template.render(templates_root)
 
 class Hello:
     def GET(self):
         return render.hello("你好")
 
-app \= web.application(urls, globals()).wsgifunc()
+app = web.application(urls, globals()).wsgifunc()
 
-application \= sae.create\_wsgi\_app(app)
+application = sae.create_wsgi_app(app)
+```
 
 Let's see what we can do here.
 
