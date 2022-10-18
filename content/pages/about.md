@@ -3,4 +3,5 @@ title = "About Me"
 path = "about"
 +++
 
-This section of the website is still under construction.
+I love software engineering, and currently living in Australia.
+Sometimes I travel to Japan and China. I'm fluent in Chinese / English and Japanese.
