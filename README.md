@@ -1,4 +1,10 @@
 ### Hi there 👋
 
-- 🔭 I’m currently working on some blockchain projects
-- 🌱 I’m currently learning rust
+## A little more about myself 
+
+I love software engineering, and currently living in Australia.
+Sometimes I travel to Japan and China. I'm fluent in Chinese / English / Japanese.
+
+## Where to find me 
+
+- Discord: @Shinsuke#0144 
