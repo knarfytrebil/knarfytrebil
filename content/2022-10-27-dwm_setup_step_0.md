@@ -58,4 +58,3 @@ sudo make install
 Now, we have dwm with gaps and autostart.
 
 In the next part, how to add custom status bar and wallpapers will be covered.
-
