@@ -78,6 +78,6 @@ And yes, compiling the stock node for local development is done here.
 
 - What's next ?
 
-If someone wants only do some smart contract development, then it should be OK just using the local development node.
+If someone only wants to do some smart contract development, the local test node is more than enough to meet the basic needs.
 
-Or, if further modification to the blockchain itself is needed, for example, changing the consensus algorism, the sourcecode itself needs to be modified. And this will be written about in future articles.
+Or, if further modification to the blockchain itself is needed (for example, changing the consensus algorism) the sourcecode itself needs to be modified. And this will be written about in future articles.
