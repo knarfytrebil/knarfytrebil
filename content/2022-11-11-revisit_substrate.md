@@ -15,11 +15,16 @@ Here are the steps to get substrate compiled:
 
 - Install Rust & nightly
 
-`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+```
+# download rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-`rustup default nightly`
+# switch to the nightly version
+rustup default nightly
 
-`rustup update`
+# update
+rustup update
+```
 
 - Install WASM Compiler
 
@@ -28,12 +33,15 @@ Here are the steps to get substrate compiled:
 - Install Other Dependencies
 
 protobuf-compiler
+
 `sudo dnf install protobuf-compiler`
 
 g++
+
 `sudo dnf install g++`
 
 clang
+
 `sudo dnf install clang`
 
 2. Get the source code
