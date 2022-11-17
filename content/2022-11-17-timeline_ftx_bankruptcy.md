@@ -10,7 +10,7 @@ tags = ["finance", "news"]
 
 __The Beginning of the Event__
 
-This event started on a [@whale_alert](https://twitter.com/whale_alert) Tweet, indicating 22,999,999 #FTT (approximately 500k in USD) was transfered from an unknown wallet to Binance, followed with Binance CEO CZ [@binance_cz](https://twitter.com/binance_cz) retweeting it: `Yes, this is a part of it.` And in previous tweets, CZ also said: 
+This event started on a [@whale_alert](https://twitter.com/whale_alert) Tweet, indicating 22,999,999 #FTT (approximately 500k in USD) was transfered from an unknown wallet to Binance, followed with Binance CEO CZ [@cz_binance](https://twitter.com/cz_binance) retweeting it: `Yes, this is a part of it.` And in previous tweets, CZ also said: 
 ```
 As part of Binance's exit from FTX equity last year, Binance received roughly $1.2 billion USD equivalent in cash (BUSD and FTT). Due to recent revelations that have came to light, we have decided to liquidate any remaining FTT on our books.
 
