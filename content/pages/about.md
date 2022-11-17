@@ -10,5 +10,5 @@ Sometimes I travel to Japan and China. I'm fluent in Chinese / English / Japanes
 
 ## Where to find me 
 
-- Discord: @Shinsuke#0144 
-
+- Discord: @Shinsuke#0144
+- Mail: relaedify[[at]]proton[[dot]]me
