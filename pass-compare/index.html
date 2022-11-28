@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="robots" content="noodp"/>
+
+    <link rel="stylesheet" href="https://ezawa.io/style.css">
+    <link rel="stylesheet" href="https://ezawa.io/color/orange.css">
+
+        <link rel="stylesheet" href="https://ezawa.io/color/background_blue.css">
+    
+    <link rel="stylesheet" href="https://ezawa.io/font-hack-subset.css">
+
+    </head>
+
+<body class="">
+<div class="container">
+    
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                    
+                <a href="https://ezawa.io" style="text-decoration: none;">
+                    <div class="logo">
+                      
+                            遠天之下
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        
+        
+                <nav class="menu">
+            <ul class="menu__inner">
+                <li class="active"><a href="https://ezawa.io">articles</a></li>
+            
+                <li><a href="https://ezawa.io/archive">archive</a></li>
+            
+                <li><a href="https://ezawa.io/about">about me</a></li>
+            
+                <li><a href="https://github.com/knarfytrebil" target="_blank" rel="noopener noreferrer">github</a></li>
+            </ul>
+        </nav>
+    
+    
+        
+    </header>
+    
+
+    <div class="content">
+        
+    <div class="post">
+        
+    <h1 class="post-title"><a href="https://ezawa.io/pass-compare/">PAAS Comparison (2014)</a></h1>
+    <div class="post-meta-inline">
+        
+    <span class="post-date">
+            2014-01-13
+        </span>
+
+    </div>
+
+    
+
+        
+        <div class="post-content">
+            <h4 id="abstract-gai-shu">Abstract (概述)</h4>
+<p>2006年8月，亚马逊的EC2 (Elastic Cloud) Aplha上线了。从那时候开始一直到现在(2014年1月)，已经度过了将近八年时间。八年，对于高速发展的互联网和IT业来说是一段很长的时间，从2006年开始的8年中，发生了许许多多的事情：智能手机，平板的诞生。Android，iOS的迅猛发展。3G - 4G网络技术等的发展，等等。PaaS，( Platform as a Service - 软件作为服务的贩卖形式 )，也经历了八年的发展，不过潮起潮落，在同一个竞技场里的玩家在这八年当中却只有区区6家，超过5年的老玩家只有3家。这足以说明要运营、支撑一个面向全世界的SaaS服务并不容易。更值得一提的是，看成全球最大电商的阿里巴巴在2012年停止了其PaaS业务。PaaS的运营和管理有多困难，其系统有多复杂，可想而知。那么当前，如果想将自己的WebApp( 网络应用 )部署在PaaS上，作为开发者和公司有些什么选择呢？在这些平台之间又应该如何选择，如何进行比较，同时又存在一些什么价值陷阱？在未来的几年之中，这些PaaS又将在什么的驱动之下向何处发展？笔者，都将在接下去得文中详细陈述。</p>
+<h4 id="main-players-zhu-yao-wan-jia">Main Players (主要玩家)</h4>
+<p>当前，在<a href="http://en.wikipedia.org/wiki/Platform_as_a_service" title="PaaS (Platform as a Service)是云计算服务的一种，其主要提供计算平台以及配套解决方案，并将其作为一种服务向顾客贩卖。">PaaS</a>的供应商中，有以下四家家主要玩家: Google App Engine, Heroku, Sina Application Engine, Parse.com</p>
+<h5 id="heroku">Heroku</h5>
+<p>Heroku作为云计算平台，于2007年诞生，其搭建在Amazon 的EC2上，故经常被人误认为是Amazon提供的PaaS服务。在其诞生初期，只支持PHP和Ruby。并且随着时间的增加，更多语言和解决方案登陆Heroku，使Heroku成为当前最成熟的PaaS之一。</p>
+<h5 id="google-application-engine-gae">Google Application Engine (GAE)</h5>
+<p>事实上云概念的真正普及者是Google Application Engine，在2008年之前，无论是Heroku还是EC2，都是在技术圈少数人在研究的东西，很少有一般人去涉足云计算开发的领域。一直到2008年，Google推出了Google Application Engine，让许多独立开发者和公司第一次接触到了云。同时，因为在Google Application Engine有大量的免费用量(Free Quota)，使得很多个人开发者蜂拥而至，在GAE上搭建博客，论坛等等。在创建初期，GAE只支持Python和Java两种语言。</p>
+<h5 id="xin-lang-yun-ji-suan-ping-tai-sina-application-engine">新浪云计算平台 (Sina Application Engine)</h5>
+<p>始于2009年，新浪云计算跟进国外的脚步的速度还是很快的。在内测的时候就有PHP一种语言，之后又添加了Python和Java。新浪云计算的收费和Google Application Engine相似，收费标准在初期比GAE低很多，吸引了很多国内的开发者驻扎新浪云计算。到后期，还有一部分的大学，机构将主页托管于新浪云计算。从目前看来，国内运营的最好的PaaS是新浪云计算。</p>
+<h5 id="parse-facebookde-parse-com">Parse (Facebook的Parse.com)</h5>
+<p>始于2012年三月，Parse.com是一种新的PaaS，虽说Parse.com和GAE，Heroku提供的服务很相似，但是他们却自称BaaS (Backend as a Service)，翻译成中文就是：</p>
+<blockquote>
+<p>后端( 设备，程序，管理 )作为一种服务</p>
+</blockquote>
+<p>笔者认为BaaS也可以归类在PaaS中，因为像Parse.com也是一个平台。本文的后面几个章节中，笔者还将说明BaaS和其他的PaaS有什么样的区别，以及利弊。</p>
+<h5 id="qi-ta-wan-jia">其他玩家</h5>
+<p><strong>阿里云</strong> : 阿里巴巴也有一个云计算平台，不过目前只有SaaS服务，即出售类似于VPS的虚拟机，其价格也和其他的虚拟机服务商没什么区别。阿里巴巴还有一个叫做ACE的PaaS，只是内测已经持续了两年，只有手持激活码的人才有机会体验。同时，阿里云还有租期一到立刻删除资料的情况，屡屡遭到业内朋友的讥讽。</p>
+<p><strong>cnode</strong> : 曾经红极一时的NodeJS云计算平台，不过因为资金不足，在Node 0.8的时代就夭折了。</p>
+<p><strong>百度云</strong> : 百度也有一个PaaS平台:BAE，目前支持PHP，Java，Python和Node.JS几种语言。它的最终API的调用方式和SAE十分相似，界面也有雷同之处。这个服务，在2013年12月16日开始处于免费测试阶段，未来前景不明。</p>
+<p><strong>kinvy.com</strong> : 2012年2月推出的平台，主要面向移动应用的BaaS。意图在缩短制作移动应用的时间和成本。值得注意的是，Google Application Engine为kinvy提供运算资源。</p>
+<h4 id="bi-jiao-biao-zhun">比较标准</h4>
+<p>在开始比较这些平台之前，最重要的必然是确定衡量这些平台好坏的标准了，笔者希望通过以下分类来对当前的云计算服务平台来进行分类和打分。</p>
+<h5 id="yong-hu-ti-yan">用户体验</h5>
+<p>作为平台提供商，给予使用平台的用户提供一个简单而有效的用户体验是非常重要的，在选择平台的过程中，笔者认为用户体验包含：收费方式，用户界面，用户文档，免费额度，部署方式以及开发环境。通常，开发者会根据以上几个因素的价值衡量，来选择适合他们的云计算平台。这几个标准当中的任何一个的条件太坏都会导致用户向其他平台的迁移，在最坏的条件下，用户甚至会选择向VPS转移。在这些条件之中，收费模式和免费额度为变量，用户会可能会根据其它平台的收费性进行函数式的选择。</p>
+<ul>
+<li>
+<p><strong>用户界面</strong> : 用户界通常被认为是一个次要因素，虽然平台体验对于用户来说是连续而整体的，但是界面的是否好用，是否对于友好，在其它的评判标准一致的情况下并不会被列入关键判断标准。举例来说，虽然Heroku的用户界面是HTML5，并且是响应式自适应的，其配色以及设计都让人感觉是经过精心设计的。Heroku的插件页面非常详细的罗列了插件的价格以及种类，同时收费标准也一目了然。用户在与Heroku的界面发生交互的时候，会自然产生对Heroku的粘性，并且更愿意留在Heroku。然而对于中国用户来说，因为线路问题，访问Heroku非常的缓慢，尽管Heroku的界面如此友好，但是不少用户，（主要是使用Python和PHP的用户)应该会舍弃界面的因素而考虑使用新浪云计算。当然，新浪云计算的用户界面和Heroku的对比起来，就缺乏设计感，显得苍白而古板。其MySQL数据库的管理界面居然直接使用PhpMyAdmin，虽然使用起来相当的熟悉，但是却让人颇为哭笑不得。除此之外，新浪提供的PhpMyAdmin还经常跳转到其它页面并且出错。如果不是因为网络速度这个特定的因素，也许很多用户会直接放弃使用新浪云计算。在国外的一些技术博客中，也有一些开发者声称自己因为Google Appliation Engine的界面太难看而转投Heroku。</p>
+</li>
+<li>
+<p><strong>用户文档</strong> : 文档，对于开发者来说很重要。因为如果没有一个平台的详细API(Application Programming Interface)文档，那么开发者在其平台上的开发就回如同盲人摸象，通常会造成设计模式上的错误。并且这样的错误在发现的时候，基本上都会需要重构。因此，云计算平台的文档是否健全，是一个相当重要的评估因素。在上述的主要平台中，每一个平台都会定期更新开发文档，例如新浪云计算的开发文档就托管在<a href="https://github.com/sinacloud/sae-python-dev-guide/blob/master/docs/faq.rst" title="新浪云计算在Github上的文档repo">Github上面</a>。用户可以在Github的源界面中看到这个文档的更新履历。这样，文档的可信度就增加，用户一目了然。对比Google Application Engine和Heroku的文档，都只能说是中规中矩。毕竟，如果没有一个完整的文档，开发者在这样的云计算平台上将寸步难行。同时，值得注意的是，开发文档也能很好地体现当前这个平台真实情况，例如：在新浪云计算的Python文档中有<a href="http://sae-python.readthedocs.org/en/latest/quickstart.html#syncdb" title="Warning： 本feature还在开发中，目前还很buggy。">这样一句话</a>:</p>
+<blockquote>
+<p>Warning：本feature还在开发中，目前还很buggy。</p>
+</blockquote>
+<p>这句话，让笔者感到很恐慌：因为我们都知道目前新浪云计算还处于Beta测试阶段，的确会出现一些bug。但是&quot;很buggy&quot;这个形容词，却不能让用户知道 <strong>1. Bug究竟在哪儿。</strong> <strong>2. 这个Bug有多严重。</strong> <strong>3. 什么时候这个Bug会被修复。</strong> 看到这句话的多数开发者应该不会去使用目前的syncdb功能去同步本地的开发数据到线上的数据库。这句话，让这个功能变得毫无意义。笔者认为，这对于一个PaaS来说是有点不负责任的。相比之下，Heroku和Google Application Engine的文档中就没有出现过类似的注解。在类似Parse.com和Kinvy.com这样的新兴平台中，就更不会出现这样的注解了。</p>
+</li>
+<li>
+<p><strong>部署方式</strong> : 部署(Deploying)是一个很重要的环节，如何从开发环境(Development Environment)向生产环境(Production Envrionment)部署，这个过程与工程本身的版本控制有着很大的关联，如果部署过程的版本控制系统和开发者使用的版本控制系统有着比较大得差异，或者造成直接冲突，这对整个用户体验来说是一个重大的影响，成为用户向其他平台迁移的动力。比如说：Heroku的部署和版本控制是使用Git的，它的部署方式很简单：只需要在开发完成之后向本地代码库(Repo)中添加heroku的remote，然后<code>git push heroku master</code>，就能达到向生产环境部署的效果。同时，如果开发者想要在bitbucket.org或者github.com同样也保存代码，就会变得非常简单，他们只需要向本地开发的代码库添加不同的remote就可以达到目的，并且在推送的时候制定推送目标即可。同样的git系统并不会导致冲突，这也是为什么Heroku项目在Github.com能够始终保持旺盛人气的原因。Google Application采用一个独有的部署系统，但是它不影响其他的版本控制系统，Google Application Engine的命令行工具可以与任何其他版本控制系统共存。这样的部署系统比较可靠，同时具有跨操作系统的特性，比如Google Application Engine的appcfg.py就是一个能够在各种平台上进行部署的解决方案，在任何平台上只需要一个<code>appcfg.py --oauth2 -A &lt;your-app-or-project-id&gt; update &lt;project-directory&gt;</code>命令，就可以部署到Google Application Engine了。而新浪云计算和Heroku都需要安装git以及其他的依赖包，而对一些新手开发者而言，在windows上部署cygwin之类的程序的学习曲线太陡峭，令人望而却步。最后说一下新浪云计算的SVN部署系统。这个系统算是中规中矩，如果开发团队还在使用svn版本控制的话，也许没什么大问题。如果开发团队使用的是git的话，那就会有点麻烦。笔者不止一次听人抱怨要把每个文件夹下的.svn文件夹加入到.gitignore文件里面去，最后导致一些用户放弃使用新浪云计算。在这点上，百度云计算(BAE)就要支持svn,git,在线编辑和包上传更新四种方式。笔者认为，在这样的情况下，会造成更多的用户转向BAE。</p>
+</li>
+<li>
+<p><strong>开发环境</strong> : 一个PaaS为用户准备的本地开发环境也很重要。</p>
+<ul>
+<li>
+<p><em>Google Application Engine:</em></p>
+<p>从08年到现在，Google Application Engine都是使用appcfg.py来在本地虚拟在平台上的环境的，因为Google独有的GQL(Google Query Language)的原因，appcfg.py中虚拟了一个本地的KVDB，让用户的代码在线上和本地运行时有相同的效果。这种开发环境的好处在于它能够在任何平台上使用。Google在发布appcfg.py的同时，发布了一套桌面应用。虽然在09年之前只有Mac用户才有类似的界面，在09年之后Windows用户也同样可以通过点击图形界面上的按钮来操作应用的发布，删除，部署等等。</p>
+</li>
+<li>
+<p><em>Heroku</em></p>
+<p>总的来说，Heroku并不鼓励用户在Windows上进行开发。在互联网上铺天盖地的教程当中，很少有详细描述如何在windows下开发heroku的webApp，也很少在StackOverFlow.com看到类似的问题被解答。这是因为，尽管Heroku提供了它的ToolBelt, 开发者还是需要将其放置在一个类似于cygwin的虚拟环境中。而且即使这些虚拟环境都运行正常，在特定的语言环境下，有些依赖包会因为在windows下编译失败而无法运行。（当然，笔者认为在windows下面做PaaS上的web开发本身就是一件比较复杂的事情，因为必然会有一些依赖库在windows下编译失败。) 在*inx(unix, osx 或者linux发行版)下，heroku的开发环境表现完美。在安装完Toolbelt之后，基本上不用什么配置，就可以直接在本地进行开发和测试了。</p>
+</li>
+<li>
+<p><em>新浪云计算</em></p>
+<p>新浪云计算一直都在模仿Google Application Engine，不过它的本地开发环境又变得有点像Heroku -- 必须手动设置环境变量。在Google Application Engine的应用配置文件中，不会需要书写类似于下面的语句：</p>
+<p>if env == &quot;development&quot;:
+'....'
+elif env == &quot;production&quot;:
+'....'</p>
+<p>不过在新浪云计算的配置文件中，却需要。这会让一些很有&quot;洁癖&quot;的开发者感到不满。同时，以后万一要把代码移植到别的地方去，修改这些配置文件也是相当头疼的事情。新浪云计算还会发生，本地测试通过，而部署之后不能运行的状况。当发生这样的情况的时候，如果不能在互联网上搜索到答案，那么唯一的方法只有找新浪云计算的客服了。</p>
+</li>
+</ul>
+<p>笔者认为，在2014年当下，国外的PaaS的开发，部署工作流程都做的不错，而国内的都做的不够好。开发者有时候会为了部署上的一个小bug而折腾好几天，造成效率的巨大降低。</p>
+</li>
+<li>
+<p><strong>免费额度</strong> : 每一个开发者都希望PaaS供应商能够提供更多的免费额度来支持自己的开发，这里笔者将对比不同平台提供的免费额度。</p>
+<ul>
+<li>
+<p><em>Google Application Engine:</em></p>
+<p>Google Application Engine的费率显示在<a href="https://developers.google.com/appengine/docs/quotas" title="Google Application Engine的费率">这个页面</a>上。在初始状态下，用户拥有5GB的Blob存储空间，1GB静态页面和代码空间，1GB数据空间以及每天50,000次的读写次数。在免费的Quota中建立一个自己的博客，或者是静态站点，绰绰有余。</p>
+</li>
+<li>
+<p><em>Heroku:</em></p>
+<p>Heroku提供的免费硬盘空间和存储空间与Google Application Engine相同。但是免费运行的Dyno数量和GAE的Instance略不相同，可以说Heroku更加小气一些，如果笔者在Heroku建立一个博客，并且这个博客变得小有人气(每天有超过100人访问)，那么笔者很可能需要为这个博客开始付钱。</p>
+</li>
+<li>
+<p><em>新浪云计算</em></p>
+<p>新浪云计算没有免费额度，他们只赠送开发者一些&quot;云豆&quot;，用来抵用开发者使用新浪云计算开发时使用的资源。在没有进行开发者认证和身份认证之前，用户需要为流向自己应用的所有流量、存储空间以及运算时付钱。</p>
+</li>
+<li>
+<p><em>百度云计算</em></p>
+<p>百度的PaaS，将于2014年2月1日开始收费，其最贵的E套餐，折算下来一个月39元。提供1G内存和2G磁盘空间，不过这种雷同于SaaS的收费计量方式让人觉得很费解。</p>
+</li>
+<li>
+<p><em>Parse.com</em></p>
+<p>Parse.com的免费额度大的惊人，包括每个月100万次请求，和100次消息推送。这要比前面任何一种都要多得多，不过，因为BaaS不需要托管静态页面，它的成本要低得多。</p>
+</li>
+<li>
+<p><em>Kinvy.com</em></p>
+<p>Kinvy.com并没有标明免费额度中的API请求次数，不过同样作为BaaS，它提供的免费推送次数达到500次。笔者试图计算500次推送在GAE或者其他的传统PaaS平台上将换算成多少Instance Hour.</p>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        
+    </div>
+
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer__inner">
+                <div class="copyright">
+                        <span>© 
+    2022
+ Powered by <a href="https://www.getzola.org/">Zola</a></span>
+                    <span class="copyright-theme">
+                        <span class="copyright-theme-sep">:: </span>
+                        Theme: <a href="https://github.com/pawroman/zola-theme-terminimal/">Terminimal</a> by pawroman
+                    </span>
+                </div>
+            </div>
+    </footer>
+    
+
+</div>
+</body>
+
+</html>

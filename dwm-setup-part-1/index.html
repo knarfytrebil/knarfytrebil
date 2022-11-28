@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="robots" content="noodp"/>
+
+    <link rel="stylesheet" href="https://ezawa.io/style.css">
+    <link rel="stylesheet" href="https://ezawa.io/color/orange.css">
+
+        <link rel="stylesheet" href="https://ezawa.io/color/background_blue.css">
+    
+    <link rel="stylesheet" href="https://ezawa.io/font-hack-subset.css">
+
+    </head>
+
+<body class="">
+<div class="container">
+    
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                    
+                <a href="https://ezawa.io" style="text-decoration: none;">
+                    <div class="logo">
+                      
+                            遠天之下
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        
+        
+                <nav class="menu">
+            <ul class="menu__inner">
+                <li class="active"><a href="https://ezawa.io">articles</a></li>
+            
+                <li><a href="https://ezawa.io/archive">archive</a></li>
+            
+                <li><a href="https://ezawa.io/about">about me</a></li>
+            
+                <li><a href="https://github.com/knarfytrebil" target="_blank" rel="noopener noreferrer">github</a></li>
+            </ul>
+        </nav>
+    
+    
+        
+    </header>
+    
+
+    <div class="content">
+        
+    <div class="post">
+        
+    <h1 class="post-title"><a href="https://ezawa.io/dwm-setup-part-1/">dwm Setup (Part 1)</a></h1>
+    <div class="post-meta-inline">
+        
+    <span class="post-date">
+            2022-10-28
+        </span>
+
+    </div>
+
+    
+        <span class="post-tags-inline">
+                :: tags:&nbsp;
+                <a class="post-tag" href="https://ezawa.io/tags/linux/">#linux</a>&nbsp;
+                <a class="post-tag" href="https://ezawa.io/tags/configuration/">#configuration</a></span>
+    
+
+        
+        <div class="post-content">
+            <p>Continued from <a href="/dwm-setup-step-0">Part 0</a>, in this part the following topics will be covered:</p>
+<ul>
+<li>barpadding</li>
+<li>wallpapers</li>
+</ul>
+<h2 id="applying-the-patch-barpadding">Applying the patch &quot;Barpadding&quot;</h2>
+<p>Applying the patch will likely end up in failure, since the patch is made for a previous version of dwm, and some slight change in one of the lines in the file <code>dwm.c</code> made the patching command fail. </p>
+<p>So, the next step is to make some changes to &quot;patch the patch&quot;.
+Now it is time to modify this file: <code>dwm-barpadding-20211020-a786211.diff</code>, which could be downloaded from <a href="https://dwm.suckless.org/patches/barpadding/">this page</a>.</p>
+<p>then do the following change:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>-static int bh, blw = 0; /* bar geometry */
+</span><span>+static int bh = 0; /* bar height */
+</span></code></pre>
+<p>This is will make it possible to apply the patch.</p>
+<p>When the patch succeeds, do:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>make
+</span><span>sudo make install
+</span></code></pre>
+<h2 id="setting-wallpaper">Setting Wallpaper</h2>
+<p>Install feh</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>sudo dnf install -y feh
+</span></code></pre>
+<p>Edit <code>~/.dwm/autostart_blocking.sh</code> insert the following:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>feh --no-fehbg --bg-fill ~/path/to/your/wallpaper
+</span></code></pre>
+<p>In the end, press <code>Ctrl + Shift + Q</code> to restart dwm and we are done.</p>
+<p>In the next part, I will try to reconfiture <code>dmenu</code> and try using <code>lemonbar</code> as the status bar.</p>
+
+        </div>
+
+        
+    </div>
+
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer__inner">
+                <div class="copyright">
+                        <span>© 
+    2022
+ Powered by <a href="https://www.getzola.org/">Zola</a></span>
+                    <span class="copyright-theme">
+                        <span class="copyright-theme-sep">:: </span>
+                        Theme: <a href="https://github.com/pawroman/zola-theme-terminimal/">Terminimal</a> by pawroman
+                    </span>
+                </div>
+            </div>
+    </footer>
+    
+
+</div>
+</body>
+
+</html>

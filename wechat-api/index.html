@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="robots" content="noodp"/>
+
+    <link rel="stylesheet" href="https://ezawa.io/style.css">
+    <link rel="stylesheet" href="https://ezawa.io/color/orange.css">
+
+        <link rel="stylesheet" href="https://ezawa.io/color/background_blue.css">
+    
+    <link rel="stylesheet" href="https://ezawa.io/font-hack-subset.css">
+
+    </head>
+
+<body class="">
+<div class="container">
+    
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                    
+                <a href="https://ezawa.io" style="text-decoration: none;">
+                    <div class="logo">
+                      
+                            遠天之下
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        
+        
+                <nav class="menu">
+            <ul class="menu__inner">
+                <li class="active"><a href="https://ezawa.io">articles</a></li>
+            
+                <li><a href="https://ezawa.io/archive">archive</a></li>
+            
+                <li><a href="https://ezawa.io/about">about me</a></li>
+            
+                <li><a href="https://github.com/knarfytrebil" target="_blank" rel="noopener noreferrer">github</a></li>
+            </ul>
+        </nav>
+    
+    
+        
+    </header>
+    
+
+    <div class="content">
+        
+    <div class="post">
+        
+    <h1 class="post-title"><a href="https://ezawa.io/wechat-api/">WeChat API</a></h1>
+    <div class="post-meta-inline">
+        
+    <span class="post-date">
+            2014-02-26
+        </span>
+
+    </div>
+
+    
+
+        
+        <div class="post-content">
+            <h4 id="the-wechat-api">The WeChat API</h4>
+<p>Last night I made a little bit of an effort to tinker with the WeChat API, for it seems there are many interesting things one can do with it. And since it is one of the biggest way of marketing oneself on earth. It turned out to be quite necessary that I know how to program with the WeChat API.</p>
+<h4 id="two-kinds-of-accounts">Two kinds of Accounts</h4>
+<p>There are two kinds of <strong>WeChat Public Accounts</strong> (At least that's how they call them), the Service Account and the Subscription Account. Service Accounts are for corporations, and other commercial entities, in-app menus and other features comes directly in the package with <strong>Service Accounts</strong>, and also, Service Account users can only broadcast messages once a month. Subscription Accounts, on the other hand, do not come with all the fancy features, including the in-app menus, perchases, and so on. However, if a user pays <strong>300 RMB</strong> per year, the Subscription Account can also enjoy what the Service Accounts do. It all depends on to what extent a user want to do with this publicity after all.</p>
+<h4 id="functions">Functions</h4>
+<p>All users will gain the WeChat API after they specify their addresses, what they do and upload a legit logo. Basic API functionalities are as follows:</p>
+<ul>
+<li>Broadcasting Messages</li>
+<li>Receiving Messages</li>
+<li>Auto Reply</li>
+</ul>
+<p>It seems to be quite simple, but in fact, there are a few types of messages:</p>
+<ul>
+<li>Text Messages</li>
+<li>GeoLocation Messages</li>
+<li>Video Messages</li>
+<li>Voice Messages</li>
+<li>Graphic Messages</li>
+</ul>
+<p>Now it is quite clear isn't it ? WeChat Account managers can utilize all kinds of informations on this platform, including user data, geographic informations to precisely market their products, interact with users programmatically.</p>
+<h4 id="techonology">Techonology</h4>
+<p>I tried to use some existing libraries:</p>
+<ul>
+<li><a href="http://sae.sina.com.cn/?m=apps&amp;a=detail&amp;aid=162">PHP Library</a></li>
+<li><a href="http://kingson.org/?p=259">Python</a></li>
+</ul>
+<p>But finally, I tried to do it on my own:</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;">#encoding: utf-8
+</span><span style="color:#b48ead;">import </span><span>os
+</span><span>
+</span><span style="color:#b48ead;">import </span><span>sae
+</span><span style="color:#b48ead;">import </span><span>web
+</span><span>
+</span><span>web.config.debug = </span><span style="color:#d08770;">True
+</span><span>
+</span><span style="color:#b48ead;">from </span><span>wxAPI </span><span style="color:#b48ead;">import </span><span>WeixinInterface
+</span><span>
+</span><span>urls = (
+</span><span>    &#39;</span><span style="color:#a3be8c;">/</span><span>&#39;, &#39;</span><span style="color:#a3be8c;">Hello</span><span>&#39;,
+</span><span>    &#39;</span><span style="color:#a3be8c;">/weixin</span><span>&#39;,&#39;</span><span style="color:#a3be8c;">WeixinInterface</span><span>&#39;
+</span><span>)
+</span><span>
+</span><span>app_root = os.path.</span><span style="color:#bf616a;">dirname</span><span>(__file__)
+</span><span>templates_root = os.path.</span><span style="color:#bf616a;">join</span><span>(app_root, &#39;</span><span style="color:#a3be8c;">templates</span><span>&#39;)
+</span><span>render = web.template.</span><span style="color:#bf616a;">render</span><span>(templates_root)
+</span><span>
+</span><span style="color:#b48ead;">class </span><span style="color:#ebcb8b;">Hello</span><span style="color:#eff1f5;">:
+</span><span>    </span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">GET</span><span>(</span><span style="color:#bf616a;">self</span><span>):
+</span><span>        </span><span style="color:#b48ead;">return </span><span>render.</span><span style="color:#bf616a;">hello</span><span>(&quot;</span><span style="color:#a3be8c;">你好</span><span>&quot;)
+</span><span>
+</span><span>app = web.</span><span style="color:#bf616a;">application</span><span>(urls, </span><span style="color:#96b5b4;">globals</span><span>()).</span><span style="color:#bf616a;">wsgifunc</span><span>()
+</span><span>
+</span><span>application = sae.</span><span style="color:#bf616a;">create_wsgi_app</span><span>(app)
+</span></code></pre>
+<p>Let's see what we can do here.</p>
+
+        </div>
+
+        
+    </div>
+
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer__inner">
+                <div class="copyright">
+                        <span>© 
+    2022
+ Powered by <a href="https://www.getzola.org/">Zola</a></span>
+                    <span class="copyright-theme">
+                        <span class="copyright-theme-sep">:: </span>
+                        Theme: <a href="https://github.com/pawroman/zola-theme-terminimal/">Terminimal</a> by pawroman
+                    </span>
+                </div>
+            </div>
+    </footer>
+    
+
+</div>
+</body>
+
+</html>

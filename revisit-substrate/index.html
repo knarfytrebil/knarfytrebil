@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="robots" content="noodp"/>
+
+    <link rel="stylesheet" href="https://ezawa.io/style.css">
+    <link rel="stylesheet" href="https://ezawa.io/color/orange.css">
+
+        <link rel="stylesheet" href="https://ezawa.io/color/background_blue.css">
+    
+    <link rel="stylesheet" href="https://ezawa.io/font-hack-subset.css">
+
+    </head>
+
+<body class="">
+<div class="container">
+    
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                    
+                <a href="https://ezawa.io" style="text-decoration: none;">
+                    <div class="logo">
+                      
+                            遠天之下
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        
+        
+                <nav class="menu">
+            <ul class="menu__inner">
+                <li class="active"><a href="https://ezawa.io">articles</a></li>
+            
+                <li><a href="https://ezawa.io/archive">archive</a></li>
+            
+                <li><a href="https://ezawa.io/about">about me</a></li>
+            
+                <li><a href="https://github.com/knarfytrebil" target="_blank" rel="noopener noreferrer">github</a></li>
+            </ul>
+        </nav>
+    
+    
+        
+    </header>
+    
+
+    <div class="content">
+        
+    <div class="post">
+        
+    <h1 class="post-title"><a href="https://ezawa.io/revisit-substrate/">Revisiting Substrate</a></h1>
+    <div class="post-meta-inline">
+        
+    <span class="post-date">
+            2022-11-11
+        </span>
+
+    </div>
+
+    
+        <span class="post-tags-inline">
+                :: tags:&nbsp;
+                <a class="post-tag" href="https://ezawa.io/tags/blockchain/">#blockchain</a>&nbsp;
+                <a class="post-tag" href="https://ezawa.io/tags/rust/">#rust</a>&nbsp;
+                <a class="post-tag" href="https://ezawa.io/tags/substrate/">#substrate</a></span>
+    
+
+        
+        <div class="post-content">
+            <p>After 2 years, it is time to sit down and get substrate compiled again. The framework has changed a lot with literally thousands of commits around the clock. The architecture fundamentally changed, and many essential components are either further moved into higher abstract layers of libraries, or removed.</p>
+<p>Here are the steps to get substrate compiled:</p>
+<ol>
+<li>Make sure that all the dependencies are installed. (In this article, Fedora 36 is the chosen platform.)</li>
+</ol>
+<ul>
+<li>Install Rust &amp; nightly</li>
+</ul>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span># download rust
+</span><span>curl --proto &#39;=https&#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh
+</span><span>
+</span><span># switch to the nightly version
+</span><span>rustup default nightly
+</span><span>
+</span><span># update
+</span><span>rustup update
+</span></code></pre>
+<ul>
+<li>Install WASM Compiler</li>
+</ul>
+<p><code>rustup target add wasm32-unknown-unknown</code></p>
+<ul>
+<li>Install Other Dependencies</li>
+</ul>
+<p>protobuf-compiler</p>
+<p><code>sudo dnf install protobuf-compiler</code></p>
+<p>g++</p>
+<p><code>sudo dnf install g++</code></p>
+<p>clang</p>
+<p><code>sudo dnf install clang</code></p>
+<ol start="2">
+<li>Get the source code</li>
+</ol>
+<p>Clone the source from github</p>
+<p><code>git clone https://github.com/paritytech/substrate.git &amp;&amp; cd substrate</code></p>
+<p>Compile</p>
+<p><code>cargo +nightly build --release</code></p>
+<p>Wait for the compile, (depends on how fast the machine is)</p>
+<p>And at Last,</p>
+<p><code>cargo run -- --dev</code></p>
+<p>If everything is done right, the following strings will appear on the terminal.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>2022-11-11 13:08:07 Substrate Node
+</span><span>2022-11-11 13:08:07 ✌️  version 3.0.0-dev-a1dee7ecd2a
+</span><span>2022-11-11 13:08:07 ❤️  by Parity Technologies &lt;admin@parity.io&gt;, 2017-2022
+</span><span>2022-11-11 13:08:07 📋 Chain specification: Development
+</span><span>2022-11-11 13:08:07 🏷  Node name: huge-reason-1707
+</span><span>2022-11-11 13:08:07 👤 Role: AUTHORITY
+</span><span>2022-11-11 13:08:07 💾 Database: RocksDb at /tmp/substratelipvJS/chains/dev/db/full
+</span><span>2022-11-11 13:08:07 ⛓  Native runtime: node-268 (substrate-node-0.tx2.au10)
+</span></code></pre>
+<p>And yes, compiling the stock node for local development is done here.</p>
+<ul>
+<li>What's next ?</li>
+</ul>
+<p>If someone only wants to do some smart contract development, the local test node is more than enough to meet the basic needs.</p>
+<p>Or, if further modification to the blockchain itself is needed (for example, changing the consensus algorism) the sourcecode itself needs to be modified. And this will be written about in future articles.</p>
+
+        </div>
+
+        
+    </div>
+
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer__inner">
+                <div class="copyright">
+                        <span>© 
+    2022
+ Powered by <a href="https://www.getzola.org/">Zola</a></span>
+                    <span class="copyright-theme">
+                        <span class="copyright-theme-sep">:: </span>
+                        Theme: <a href="https://github.com/pawroman/zola-theme-terminimal/">Terminimal</a> by pawroman
+                    </span>
+                </div>
+            </div>
+    </footer>
+    
+
+</div>
+</body>
+
+</html>
